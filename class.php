@@ -1,21 +1,29 @@
-<?php
-
-class checkDivision
-{
-    function checkAndReturnValue($number, $division)
-    {
-        if ($number % $division == 0) {
-            $returnValue = true;
-        } else {
-            $returnValue = false;
-        }
-        return $returnValue;
+<?php 
+class check {
+  public function checkFunc($val){
+     if($val%3===0 && $val%5===0){
+      return 'fizzBuzz';
+    }elseif($val%3===0){
+        return"fizz";
+    }elseif($val%5===0){
+        return "Buzz";
+    }else{
+        return $val;
     }
+  }
+
+
 }
 
-$checkDivision = new checkDivision();
-if ($checkDivision->checkAndReturnValue(11, 3)) {
-    echo '割り切れる';
-} else {
-    echo "割り切れない";
-}
+$check = new check();
+$arr = range(1,50,1);
+foreach ($arr as $item) {
+    echo $check->checkFunc($item)."\n";
+};
+
+
+
+
+
+
+?>
